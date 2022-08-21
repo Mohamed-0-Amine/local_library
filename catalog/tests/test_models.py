@@ -1,4 +1,3 @@
-from attr import field
 from django.test import TestCase
 from catalog.models import Author,Book
 # Create your tests here.
