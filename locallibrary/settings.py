@@ -31,9 +31,7 @@ SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-b@2wo(no6@ydjh8
 DEBUG= os.environ.get(' DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
-    '0.0.0.0',
-    'ec2-35-158-95-218.eu-central-1.compute.amazonaws.com',
-    '127.0.0.1',
+    '.ec2-35-158-95-218.eu-central-1.compute.amazonaws.com',
 ]
 
 
@@ -89,8 +87,8 @@ DATABASES = {
         'NAME': 'librarydb',
         'USER': 'libraryuser',
         'PASSWORD': '182002amine#',
-        'HOST': '127.0.0.1',
-        'PORT':'5432',
+        'HOST': 'localhost',
+        'PORT':'',
     }
 }
 
