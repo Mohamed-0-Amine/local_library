@@ -31,7 +31,8 @@ SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-b@2wo(no6@ydjh8
 DEBUG= os.environ.get(' DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
-    '.ec2-35-158-95-218.eu-central-1.compute.amazonaws.com',
+    'ec2-35-158-95-218.eu-central-1.compute.amazonaws.com',
+    '3.73.56.217',
 ]
 
 
