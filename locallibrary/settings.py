@@ -30,9 +30,7 @@ SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-b@2wo(no6@ydjh8
 # DEBUG = True
 DEBUG= os.environ.get(' DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = [
-    'ec2-3-124-186-239.eu-central-1.compute.amazonaws.com',
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -45,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog.apps.CatalogConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -83,12 +82,8 @@ WSGI_APPLICATION = 'locallibrary.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT':'',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -128,9 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
-# The absolute path to the directory where will collect files for deployment.
-STATIC_ROOT= os.path.join(STATIC_URL, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

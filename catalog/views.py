@@ -128,19 +128,19 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'catalog/signup.html', {'form': form}) 
 
-class AuthorCreate(PermissionRequiredMixin, CreateView):
+class AuthorCreate(PermissionRequiredMixin,CreateView):
     model = Author
     permission_required=('catalog.can_add_author',)
     fields = ['first_name','last_name', 'date_of_birth', 'date_of_Death']
     template_name= 'catalog/author_form.html'    
 
-class AuthorUpdate(PermissionRequiredMixin, UpdateView):
+class AuthorUpdate(PermissionRequiredMixin,UpdateView):
     model = Author
     permission_required= ('catalog.can_change_author',)
     fields = '__all__' # Not recommended (potential security issue if more fields added)
     template_name= 'catalog/author_form.html'    
 
-class AuthorDelete(PermissionRequiredMixin, DeleteView):
+class AuthorDelete(PermissionRequiredMixin,DeleteView):
     model = Author
     permission_required= ('catalog.can_delete_author',)
     success_url= reverse_lazy('authors')
@@ -161,7 +161,7 @@ class BookUpdate(PermissionRequiredMixin,UpdateView):
 class BookDelete(PermissionRequiredMixin,DeleteView):
     model= Book
     permission_required= ('catalog.can_delete_book')
-    success_url=('books')
+    success_url= reverse_lazy('books')
     template_name="catalog/book_confirm_delete.html"
 
 
